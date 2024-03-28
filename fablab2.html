@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+    <title>Saurabh's Portfolio</title>
+
+    <link rel="stylesheet" href="./styles/fablab2.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&amp;display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&amp;display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+
+    <link rel="stylesheet" href="cursor/dist/style.css">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="stylesheet" href="cursor/src/style.scss">
+
+</head>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<body class="body">
+
+
+
+
+
+    <div class="navcontent">
+
+        <ul>
+            <li class="m link"><a class="m link" href="index.html">Home</a></li>
+
+            <li class="m"><a class="m" href="index.html">About</a></li>
+
+            <li class="m"><a class="m" href="index.html">Education</a></li>
+
+            <li class="m"><a class="m" href="index.html">Connect</a></li>
+
+            <li class="m"><a class="m" href="fablab2.html">Fablab</a></li>
+
+
+        </ul>
+
+    </div>
+
+    <div id="section1">
+
+
+        <div class="info">
+
+
+            <div class="imgdiv">
+
+                <a class="anim"><img class="img" src="/images/fab2.webp" alt="" border="0"></a>
+
+                <br>
+
+
+            </div>
+
+            <div class="bio">
+<br>
+<br><br>
+                <h2 class="a anim">Fab Lab Modules
+                </h2>
+                <br>
+<br>
+<a href="web.html">
+<h3>1. Web Development for Fab Lab ↗
+</h3></a>
+<br>
+<br>
+<a href="laser.html">
+<h3>2. Laser Cutting Module Documentation for Fab Lab ↗</h3></a>
+<br>
+<br><a href="cnc.html">
+<h3>3. CNC for Fab Lab ↗</h3></a>
+<br>
+<a href="cad.html">
+    <h3>4. CAD for Fab Lab ↗</h3></a>
+<br>
+
+                <script>
+                    const tiltEffectSettings = {
+                        max: 15, // max tilt rotation (degrees (deg))
+                        perspective: 3500, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
+                        scale: 1.04, // transform scale - 2 = 200%, 1.5 = 150%, etc..
+                        speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
+                        easing: "cubic-bezier(.03,.98,.52,.99)" // easing (transition-timing-function) of the enter/exit transition
+                    };
+
+                    const cards = document.querySelectorAll(".bio");
+
+                    cards.forEach(card => {
+                        card.addEventListener("mouseenter", cardMouseEnter);
+                        card.addEventListener("mousemove", cardMouseMove);
+                        card.addEventListener("mouseleave", cardMouseLeave);
+                    });
+
+                    function cardMouseEnter(event) {
+                        setTransition(event);
+                    }
+
+                    function cardMouseMove(event) {
+                        const card = event.currentTarget;
+                        const cardWidth = card.offsetWidth;
+                        const cardHeight = card.offsetHeight;
+                        const centerX = card.offsetLeft + cardWidth / 2;
+                        const centerY = card.offsetTop + cardHeight / 2;
+                        const mouseX = event.clientX - centerX;
+                        const mouseY = event.clientY - centerY;
+                        const rotateXUncapped = (+1) * tiltEffectSettings.max * mouseY / (cardHeight / 2);
+                        const rotateYUncapped = (-1) * tiltEffectSettings.max * mouseX / (cardWidth / 2);
+                        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max :
+                            (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
+                        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max :
+                            (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
+
+                        card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                            scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+                    }
+
+                    function cardMouseLeave(event) {
+                        event.currentTarget.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                        setTransition(event);
+                    }
+
+                    function setTransition(event) {
+                        const card = event.currentTarget;
+                        clearTimeout(card.transitionTimeoutId);
+                        card.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
+                        card.transitionTimeoutId = setTimeout(() => {
+                            card.style.transition = "";
+                        }, tiltEffectSettings.speed);
+                    }
+
+                    const button = document.querySelector(".bio");
+
+                    const readout = document.querySelector("p");
+
+                    button.addEventListener("mousemove", (e) => {
+                        const { x, y } = button.getBoundingClientRect();
+                        button.style.setProperty("--x", e.clientX - x);
+                        button.style.setProperty("--y", e.clientY - y);
+                    });
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+        <div class="copy">
+            <h3>Made From Scratch With&nbsp&nbsp<span class="heart"></span>
+            </h3>
+            <h3>&copy; Saurabh Gaikwad 2024</h3>
+        </div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+    <script src="cursor/dist/script.js"></script>
+
+</body>
+
+
+</html>

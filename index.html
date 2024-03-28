@@ -1,0 +1,411 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+    <title>Saurabh's Portfolio</title>
+
+    <link rel="stylesheet" href="/styles/portfolio.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&amp;display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&amp;display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+
+    <link rel="stylesheet" href="cursor/dist/style.css">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="stylesheet" href="cursor/src/style.scss">
+
+</head>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<body class="body">
+
+<!--     <div id="preloader" >
+        <div id="loader"></div>
+    </div>
+  <script>window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+  });
+  
+</script> -->
+
+
+
+    <div class="navcontent">
+
+        <ul>
+            <li class="m link"><a class="m link" href="#section1">Home</a></li>
+
+            <li class="m"><a class="m" href="#section2">About</a></li>
+
+            <li class="m"><a class="m" href="#section3">Education</a></li>
+
+            <li class="m"><a class="m" href="#section4">Connect</a></li>
+
+            <li class="m"><a class="m" href="fablab2.html">Fablab</a></li>
+
+
+        </ul>
+
+    </div>
+
+    <div id="section1">
+
+
+        <div class="info">
+
+
+            <div class="imgdiv">
+
+                <a class="anim"><img class="img" src="https://iili.io/JjjneHl.md.jpg" alt="" border="0"></a>
+
+                <br>
+
+
+            </div>
+
+            <div class="bio">
+
+                <h1 class="a anim"> Hi, I'm Saurabh</h1>
+
+                <p class="paragraph anim"> I'm a Sophomore at Shri Sant Gajanan Maharaj College of Engineering Shegaon
+                    <br> <br> <br> A Student from the Electronics and Telecommunication Department.
+                </p>
+
+
+                <script>
+                    const tiltEffectSettings = {
+                        max: 15, // max tilt rotation (degrees (deg))
+                        perspective: 3500, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
+                        scale: 1.04, // transform scale - 2 = 200%, 1.5 = 150%, etc..
+                        speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
+                        easing: "cubic-bezier(.03,.98,.52,.99)" // easing (transition-timing-function) of the enter/exit transition
+                    };
+
+                    const cards = document.querySelectorAll(".bio");
+
+                    cards.forEach(card => {
+                        card.addEventListener("mouseenter", cardMouseEnter);
+                        card.addEventListener("mousemove", cardMouseMove);
+                        card.addEventListener("mouseleave", cardMouseLeave);
+                    });
+
+                    function cardMouseEnter(event) {
+                        setTransition(event);
+                    }
+
+                    function cardMouseMove(event) {
+                        const card = event.currentTarget;
+                        const cardWidth = card.offsetWidth;
+                        const cardHeight = card.offsetHeight;
+                        const centerX = card.offsetLeft + cardWidth / 2;
+                        const centerY = card.offsetTop + cardHeight / 2;
+                        const mouseX = event.clientX - centerX;
+                        const mouseY = event.clientY - centerY;
+                        const rotateXUncapped = (+1) * tiltEffectSettings.max * mouseY / (cardHeight / 2);
+                        const rotateYUncapped = (-1) * tiltEffectSettings.max * mouseX / (cardWidth / 2);
+                        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max :
+                            (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
+                        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max :
+                            (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
+
+                        card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                            scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+                    }
+
+                    function cardMouseLeave(event) {
+                        event.currentTarget.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                        setTransition(event);
+                    }
+
+                    function setTransition(event) {
+                        const card = event.currentTarget;
+                        clearTimeout(card.transitionTimeoutId);
+                        card.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
+                        card.transitionTimeoutId = setTimeout(() => {
+                            card.style.transition = "";
+                        }, tiltEffectSettings.speed);
+                    }
+
+                    const button = document.querySelector(".bio");
+
+                    const readout = document.querySelector("p");
+
+                    button.addEventListener("mousemove", (e) => {
+                        const { x, y } = button.getBoundingClientRect();
+                        button.style.setProperty("--x", e.clientX - x);
+                        button.style.setProperty("--y", e.clientY - y);
+                    });
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="section2">
+
+
+        <div class="aboutgm">
+
+            <h1 class="h1 anim"> &lt; About&gt; </h1>
+
+            <div class="aboutdivparent">
+                <div class="aboutdiv">
+
+                    <p class="anim">I am from Buldana city, India <br> <br> <br> I like Art, Music and Computers!  </p>
+                    
+
+                    <img class="pic anim"
+                        src="/images/vector.gif"
+                        alt="">
+
+
+
+                </div>
+            </div>
+            <h1 class="anim"> &lt; / About&gt; </h1>
+
+        </div>
+
+    </div>
+
+    <div id="section3">
+
+
+
+        <h1 class="anim"> &lt; Education&gt; </h1>
+
+        <div class="educationdivparent">
+
+            <div class="educationdiv">
+
+                <h2 class="anim">• Current</h2>
+
+                <br>
+
+                <h3 class="anim">Pursuing B.E. at Shri Sant Gajanan Maharaj College of Engineering, Shegaon </h3>
+
+                <br>
+
+                <h2 class="anim">• HSC</h2>
+
+                <br>
+
+                <h3 class="anim">Rajarshi Shahu JR College, Mhasla</h3>
+
+                <br>
+
+                <h2 class="anim">• SSC</h2>
+
+                <br>
+
+                <h3 class="anim">Prabodhan Vidyalaya, Buldana</h3>
+
+                <br>
+
+                <h2 class="anim">• Primary</h2>
+
+                <br>
+
+                <h3 class="anim">Gandhi Primary School, Buldana</h3>
+
+            </div>
+        </div>
+
+        <h1 class="anim"> &lt; / Education&gt; </h1>
+
+
+
+    </div>
+
+<div id="section5">
+
+    <h1 class="anim">
+        <h1 class="anim"> &lt; Projects&gt;</h1>
+
+        <div class="educationdivparent">
+
+            <div class="educationdiv">
+
+<h2 class="anim">• Amazon Reviews Scraper</h2>
+<br>
+<h3 class="anim">Python · Docker · Splash JS · BeautifulSoup · Flask · Selenium ·
+    ChatGPT API</h3>
+                <br>
+    <h4 class="anim">Reviews scraper of an Amazon product using Splash JS with
+        Docker, using libraries like BeautifulSoup v4,requests,pandas,etc.
+        Data analysis of the collected data using prompting on ChatGPT
+        and Claude AI like LLM's.This gives the complete insights about a
+        product on the amazon website</h4>
+<br>
+<br>
+<br>
+        <h2 class="anim">• AI Homepage Chrome Extension</h2>
+        <br>
+        <h3 class="anim">JavaScript · Cascading Style Sheets (CSS) · HTML · Chrome APIs</h3>
+                        <br>
+            <h4 class="anim">A new tab extension in the style of macOS which allows you to
+                access all the latest useful AI tools with ease at your homepage.
+                Implemented using HTML, CSS, and JavaScript, and leveraged
+                Chrome APIs for seamless integration and performance.</h4>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h1 class="anim"> &lt; / Projects&gt; </h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="section4">
+
+        <h1 class="anim"> &lt; Connect&gt; </h1>
+
+        <div class="connectdiv">
+            <div class="connectdivparent">
+                <h2 class="anim"> Connect with me on my social media links-</h2>
+                <a class="invert" href="http://instagram.com/__saurabhkg__"><img class="icons anim"
+                        src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-256.png" alt=""></a>
+                <a class="invert"
+                    href="https://twitter.com/saurabh_exe?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1595665611363090432%7Ctwgr%5E9de82cefe82baadffbd84bb83aa03e90e861a7ae%7Ctwcon%5Es1_&amp;ref_url=https%3A%2F%2Flinktr.ee%2Fsaurabhkg"><img
+                        class="icons anim"
+                        src="https://cdn3.iconfinder.com/data/icons/picons-social/57/43-twitter-256.png" alt=""></a> <a
+                    class="invert" href="https://github.com/Saurabhkg03"><img class="icons anim"
+                        src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-256.png" alt=""></a>
+                <a class="invert" href="https://www.linkedin.com/in/saurabh-gaikwad-605a70228/"><img class="icons anim"
+                        src="https://cdn3.iconfinder.com/data/icons/picons-social/57/11-linkedin-256.png" alt=""></a> <a
+                    class="invert" href="https://www.artstation.com/saurabhgaikwad2"><img class="icons anim"
+                        src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/artstation-256.png" alt=""></a>
+                        <h2 class="anim"> Download My Resume -</h2>
+                    <br>
+                    <br>
+                    <br>
+                        <a class="download" href="resume.pdf" download>Download</a>
+            </div>
+            <div class="contact">
+
+                <div class="card">
+
+                    <h2>Contact Me</h2>
+
+                    <div class="row">
+
+                        <div class="col">
+
+                            <div class="form-group"> <label>First Name</label>
+
+                                <input type="text">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="form-group"> <label>Surname</label>
+
+                                <input type="text">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="form-group"> <label>Email</label>
+
+                                <input type="text">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="form-group"> <label>Phone</label>
+
+                                <input type="text">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="form-group"> <label>Message</label> <textarea></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <input type="submit" value="Submit">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <h1 class="anim"> &lt; / Connect&gt; </h1>
+        <div class="copy">
+            <h3>Made From Scratch With&nbsp&nbsp<span class="heart"></span>
+            </h3>
+            <h3>&copy; Saurabh Gaikwad 2024</h3>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+    <script src="cursor/dist/script.js"></script>
+
+</body>
+
+
+</html>
